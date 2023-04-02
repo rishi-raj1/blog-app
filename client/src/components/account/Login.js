@@ -79,7 +79,7 @@ const Login = () => {
 
     const imageURL = 'https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
 
-    const [account, toggleAccount] = useState('login');
+    const [userAccount, setUserAccount] = useState('login');
     const [signup, setSignup] = useState(signupInitialValues);
     const [error, setError] = useState('');
     const [login, setLogin] = useState(loginInitialValues);
@@ -97,7 +97,7 @@ const Login = () => {
 
 
     const toggle = () => {
-        account === 'signup' ? toggleAccount('login') : toggleAccount('signup');
+        userAccount === 'signup' ? setUserAccount('login') : setUserAccount('signup');
     }
 
     const signupInputChange = (e) => {
@@ -126,7 +126,7 @@ const Login = () => {
         if (response.isSuccess) {
             setError('');
             setSignup(signupInitialValues);
-            toggleAccount('login');
+            setUserAccount('login');
         } else {
             if (response.code === 409) {
                 setError(response.msg);
@@ -189,7 +189,7 @@ const Login = () => {
 
                 <Image src={imageURL} alt="login" />
                 {
-                    account === 'login' ?
+                    userAccount === 'login' ?
                         (
                             <Wrapper>
                                 <TextField variant='standard' value={login.username} label='Enter username' onChange={(e) => loginInputChange(e)}
