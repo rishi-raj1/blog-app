@@ -165,6 +165,8 @@ const Login = () => {
             setError('');
             sessionStorage.setItem('accessToken', `Bearer ${response.data.accessToken}`);
 
+            console.log('response in login.js ', response);
+
             setAccount({ username: response.data.username, name: response.data.name });
 
             navigate('/');

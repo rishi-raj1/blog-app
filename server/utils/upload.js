@@ -5,13 +5,11 @@ import multer from 'multer';
 
 dotenv.config();
 
-const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
 
 // console.log('upload.js me hai /file/upload se yha pe phuche hai');
 
 const storage = new GridFsStorage({
-    url: `mongodb+srv://${username}:${password}@cluster0.of5s4.mongodb.net/test?retryWrites=true&w=majority`,
+    url: `${process.env.MONGO_URI}`,
     options: {
         useNewUrlParser: true
     },
