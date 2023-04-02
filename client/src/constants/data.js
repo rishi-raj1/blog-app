@@ -7,5 +7,4 @@ export const categories = [
     { id: 3, type: 'Sports' },
     { id: 4, type: 'Tech' },
     { id: 5, type: 'Fashion' },
-    { id: 6, type: 'With Space' },
 ]
