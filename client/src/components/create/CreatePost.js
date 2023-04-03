@@ -108,7 +108,7 @@ const CreatePost = () => {
 
         const getImage = async () => {
             // console.log('createpost.jsx me hai ');
-            console.log(file);
+            // console.log(file);
 
             const type = ['image/png', 'image/jpg', 'image/jpeg'];
             const maxAllowedFileSize = 5 * 1024 * 1024;
@@ -138,7 +138,7 @@ const CreatePost = () => {
                 // API call
 
                 const response = await API.uploadFile(data);
-                console.log('createpost.jsx me hai ', response);
+                // console.log('createpost.jsx me hai ', response);
 
                 // post.picture = response.data; 
                 // upar wale code se post ka picture change krne se change reflect nhi hota hai niche wala code shi hai apne mn se likhe hai
@@ -158,7 +158,7 @@ const CreatePost = () => {
     const savePost = async () => {
 
         let response = await API.createPost(post);
-        console.log(response);
+        // console.log(response);
 
         if (response.isSuccess) {
             navigate('/');
