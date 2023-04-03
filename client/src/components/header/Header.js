@@ -3,19 +3,51 @@ import { Link } from 'react-router-dom';
 
 
 
-const Component = styled(AppBar)`
-    background-color: #ffffff;
-    color: #000;
-`
+const Component = styled(AppBar)(({ theme }) => ({
 
-const Container = styled(Toolbar)`
-    justify-content: center;
-    & > a {
-        padding: 20px;
-        text-decoration: none;
-        color: #000;
+    backgroundColor: '#ffffff',
+    color: '#000000',
+
+    [theme.breakpoints.down('sm')]: {
+        marginBottom: '3px',
+        padding: '0 10px'
     }
-`
+
+}))
+
+
+// const Component = styled(AppBar)`
+//     background-color: #ffffff;
+//     color: #000;
+// `
+
+const Container = styled(Toolbar)(({ theme }) => ({
+    justifyContent: 'center',
+    '& > a': {
+        padding: '10px 20px',
+        textDecoration: 'none',
+        color: '#000',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+        justifyContent: 'space-between',
+        padding: '0',
+        '& > a': {
+            padding: '8px',
+        },
+    }
+}))
+
+
+
+// const Container = styled(Toolbar)`
+//     justify-content: center;
+//     & > a {
+//         padding: 10px;
+//         text-decoration: none;
+//         color: #000;
+//     }
+// `
 
 const handleLogout = () => {
     sessionStorage.removeItem('accessToken');

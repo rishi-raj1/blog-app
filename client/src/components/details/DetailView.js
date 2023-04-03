@@ -14,9 +14,12 @@ import { DataContext } from '../../context/DataProvider';
 import Comments from "./comments/Comments";
 
 const Container = styled(Box)(({ theme }) => ({
-    margin: '50px 100px',
-    [theme.breakpoints.down('md')]: {
-        margin: '2px',
+    margin: '50px 90px',
+    [theme.breakpoints.down('sm')]: {
+        margin: '3px 10px'
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+        margin: '50px 40px',
     }
 }))
 
@@ -50,16 +53,31 @@ const Delete = styled(DeleteIcon)`
     cursor: pointer;
 `
 
-const Author = styled(Box)`
-    color: #878787;
-    margin: 20px 0;
-    display: flex;
-`
+const Author = styled(Box)(({ theme }) => ({
+    color: '#878787',
+    margin: '20px 0',
+    display: 'flex',
+    justifyContent: 'space-between',
+
+    [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '10px',
+        marginBottom: '20px',
+    },
+}))
+
+// const Author = styled(Box)`
+//     color: #878787;
+//     margin: 20px 0;
+//     display: flex;
+// `
 
 const Description = styled(Typography)`
     word-break: break-word;
     white-space: pre-wrap;
 `
+
 
 const DetailView = () => {
 
@@ -127,9 +145,8 @@ const DetailView = () => {
             <Heading>{post.title}</Heading>
 
             <Author>
-                <Typography>Author: <Box component='span' style={{ fontWeight: 600 }}>{post.username}</Box> </Typography>
+                <Typography>Author: <Box component='span' style={{ fontWeight: 600, wordBreak: 'break-word' }}>{post.username}</Box> </Typography>
                 <Typography
-                    style={{ marginLeft: 'auto' }}
                 >
                     {`${date} at ${time} ${ampm}`}
                 </Typography>

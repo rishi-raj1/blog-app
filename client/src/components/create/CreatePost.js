@@ -11,8 +11,9 @@ import { API } from "../../services/api";
 
 const Container = styled(Box)(({ theme }) => ({
     margin: '20px 30px',
-    [theme.breakpoints.down('md')]: {
-        margin: '2px',
+
+    [theme.breakpoints.down('sm')]: {
+        margin: '5px',
     }
 }))
 
