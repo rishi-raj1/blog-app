@@ -2,7 +2,8 @@ import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
 
 
-const url = 'http://localhost:5000';
+// const url = 'http://localhost:5000';
+const url = 'https://backendblog-sask.onrender.com';
 
 let gfs, gridfsBucket;
 
@@ -26,7 +27,7 @@ conn.once('open', () => {
 export const uploadImage = (req, res) => {
 
     if (!req.file) {
-        console.log('imageController.js file me hai if me file nhi hai line 50 ', req.file);
+        // console.log('imageController.js file me hai if me file nhi hai line 50 ', req.file);
 
         return res.status(404).json({ msg: 'File not found' });
     }
