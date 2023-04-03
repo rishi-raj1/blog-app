@@ -17,25 +17,12 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
     function (config) {
-        // console.log('request interceptor me hai api.js me');
-        // console.log(config.url);
 
         if (config.TYPE.params) {
-            // console.log('request bhejne se phle request object ko change kr rhe hai if me api.js me ');
-            // console.log(config);
-            // console.log(config.TYPE);
-            // console.log(config.TYPE.params);
-            // console.log(config.TYPE.query);
 
             config.url = config.url + '/' + config.TYPE.params;
         }
         else if (config.TYPE.query) {
-            // console.log('request bhejne se phle request object ko change kr rhe hai else if me api.js me ');
-            // console.log(config);
-            // console.log(config.url);
-            // console.log(config.TYPE);
-            // console.log(config.TYPE.query);
-            // console.log(config.TYPE.params);
 
             config.params = config.TYPE.query;
 
@@ -66,9 +53,6 @@ axiosInstance.interceptors.response.use(
         // stop global loader here
 
         // return Promise.reject(processError(error));
-        // uppar wale code se uncaught in promise error aa rha tha console me because uppar wala code 
-        // promise return nhi kr rha hai and createPost.jsx me ya kisi bhi file me hmlog promise expect 
-        // kr rhe the response me  isiliye niche wala code apne man se likhe hai
 
         return processError(error);
     }

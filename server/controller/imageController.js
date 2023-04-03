@@ -17,12 +17,6 @@ conn.once('open', () => {
     gfs.collection('photos');
 })
 
-// upper conn.once me bucketName me 'photos' daale hai and gfg.collection me bhi photos daale hai 
-// kyunki upload.js me jb hmlog storage object ke if me nhi jaate hai to bucketName 'photos' save krte hai
-// lekin video me iss file me bucketName 'fs' save kiya hai . video me code isiliye run kr rha hai 
-// kyunki wha if condition se hi return ho jata hai because wo jpg image input me de rha hai aur 
-// jiska content-type : image/jpeg hota hai aur video me if condition me image/jpg hai . video ka code wrong hai.
-
 
 export const uploadImage = (req, res) => {
 

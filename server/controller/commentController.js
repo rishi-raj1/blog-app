@@ -1,5 +1,4 @@
 
-
 import Comment from '../models/commentModel.js';
 
 export const newComment = async (req, res) => {
@@ -16,10 +15,6 @@ export const newComment = async (req, res) => {
 export const getComments = async (req, res) => {
     try {
         const comments = await Comment.find({ postId: req.params.id });
-
-        // console.log('getComments function me comment controller me ');
-        // console.log(req.params.id);
-        // console.log(comments);
 
         return res.status(200).json(comments);
     } catch (error) {

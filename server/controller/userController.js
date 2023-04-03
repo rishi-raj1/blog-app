@@ -48,12 +48,9 @@ export const signupUser = async (req, res) => {
 export const loginUser = async (req, res) => {
     try {
         const user = await User.findOne({ username: req.body.username });
-        // console.log('usercontroller.js me user ka value hai ', user);
-
 
         if (user) {
             const match = await bcrypt.compare(req.body.password, user.password);
-            // console.log('usercontroller.js me match ka value hai ', match);
 
 
             if (match) {
