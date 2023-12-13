@@ -3,7 +3,7 @@ import { GitHub, Instagram, Email } from '@mui/icons-material';
 
 
 const Banner = styled(Box)`
-    background-image: url(http://mrtaba.ir/image/bg2.jpg);
+    background-image: url(/about.jpg);
     width: 100%;
     height: 50vh;
     background-position: right 0px top 0px;
