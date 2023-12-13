@@ -73,3 +73,8 @@ function App() {
 }
 
 export default App;
+
+
+//  backend url present in
+//  D:\blog-app\client\src\services\api.js
+//  D:\blog-app\server\controller\imageController.js

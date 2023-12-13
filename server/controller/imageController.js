@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 
 // const url = 'http://localhost:5000';
-const url = 'https://backendblog-sask.onrender.com';
+const url = 'https://blogappbackend12.onrender.com';
 
 let gfs, gridfsBucket;
 

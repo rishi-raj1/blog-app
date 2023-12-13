@@ -28,3 +28,7 @@ Connection();
 
 
 app.listen(PORT, () => console.log(`server is running successfully on PORT ${PORT}`));
+
+
+//  backend url present in
+//  D:\blog-app\server\controller\imageController.js
